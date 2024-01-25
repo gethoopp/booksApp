@@ -8,8 +8,10 @@ import (
 func RestGet() {
 	r := gin.Default()
 	res := services.Getdata
-
+	req := services.UpdateHandler
 	r.GET("/get", res)
+
+	r.PUT("/update/:id", req)
 
 	r.Run(":8080")
 }
